@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="main-body mt-5">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="main-breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+        <li class="breadcrumb-item"><a href="index.html">List d'employés</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Profil </li>
+      </ol>
+    </nav>
+    <!-- /Breadcrumb -->
+
+    <div class="row gutters-sm">
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+                width="150">
+              <div class="mt-3">
+                <h4> Nom </h4>
+                <p class="text-secondary mb-1">Commercial</p>
+                <p class="text-muted font-size-sm">{{ commercial.chiffreAffaire }} XOF</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-8">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Full Name</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{ commercial.nom }} {{ commercial.prenom }}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                example domain.com
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Telephone</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                (0) 0000 0000 0000
+              </div>
+            </div>
+
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Date d'inscription</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{ commercial.deteEntree | date }}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-12">
+                <a class="btn btn-info " target="__blank" href="update-employee.html">Editer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
