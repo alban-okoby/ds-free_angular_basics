@@ -1,5 +1,10 @@
 body{margin-top:20px;}
 
+.add-btn {
+  /* float: right !important; */
+  margin-left: -1.5rem !important;
+  position: absolute;
+}
 
 /* USER LIST TABLE */
 .user-list tbody td > img {

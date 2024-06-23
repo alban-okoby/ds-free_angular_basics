@@ -5,12 +5,14 @@
         <div class="table-responsive">
           <table class="table user-list">
             <thead>
-              <tr>
+              <tr style="padding-bottom: .25rem; margin-bottom: 0.25rem;">
                 <th><span>User</span></th>
                 <th><span>Created</span></th>
                 <th class="text-center"><span>Status</span></th>
                 <th><span>Email</span></th>
-                <th>&nbsp;</th>
+                <th>&nbsp;
+                <button class="btn btn-success" routerLink="/add-employee">Ajouter</button>
+              </th>
               </tr>
             </thead>
             <tbody>
@@ -42,7 +44,7 @@
                       <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                     </span>
                   </a>
-                  <a href="#" class="table-link danger">
+                  <a href="javascript:void(0)" class="table-link danger" (click)="deleteModal(emp.id)">
                     <span class="fa-stack">
                       <i class="fa fa-square fa-stack-2x"></i>
                       <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>

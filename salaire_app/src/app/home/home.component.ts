@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../services/employee.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -27,7 +28,54 @@ export class HomeComponent implements OnInit {
   getAllCommercial() {
     this.employeeService.getAllCommercial().subscribe((res: any) => {
       this.commercials = res;
-      console.log(this.commercials);
     })
+  }
+
+  deleteCommercial(commercialId: number) {
+    this.employeeService.deleteCommercialById(commercialId).subscribe((res: any) => {
+    })
+
+  }
+
+  deleteModal(emplId: number) {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger',
+      },
+      buttonsStyling: false,
+    });
+    swalWithBootstrapButtons
+      .fire({
+        title: 'Etes vous sûr ?',
+        text: "Cette action est irréversible!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Oui, supprimer !',
+        cancelButtonText: 'Non, annuler!',
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire({
+            title: 'Supprimé !',
+            text: 'Employé supprimé avec succès.',
+            icon: 'success',
+          });
+          this.deleteCommercial(emplId);
+          setTimeout(() => {
+            this.getAllCommercial();
+          }, 900);
+
+        } else if (
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: 'Annulé',
+            text: 'L\'employé est sauf',
+            icon: 'error',
+          });
+        }
+      });
   }
 }

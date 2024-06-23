@@ -26,9 +26,10 @@ export class EmployeeDetailsComponent implements OnInit {
 
 getCurrenEmployee() {
   this.activatedRoute.paramMap.subscribe((p: any) => {
-    const empId = p.get('id');
+    const empId = p.get('commercialId');
     this.employeeService.getCommercialById(empId).subscribe((res: any) => {
       this.commercial = res;
+      console.log(this.commercial);
     });
   });
 }
