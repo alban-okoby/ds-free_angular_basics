@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-  deleteModal(emplId: number) {
+  onDeleteModal(emplId: number) {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success',

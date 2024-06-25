@@ -11,7 +11,7 @@
                 <th class="text-center"><span>Status</span></th>
                 <th><span>Email</span></th>
                 <th>&nbsp;
-                <button class="btn btn-success" routerLink="/add-employee">Ajouter</button>
+                <button class="btn btn-primary" routerLink="/add-employee">Ajouter</button>
               </th>
               </tr>
             </thead>
@@ -44,7 +44,7 @@
                       <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                     </span>
                   </a>
-                  <a href="javascript:void(0)" class="table-link danger" (click)="deleteModal(emp.id)">
+                  <a href="javascript:void(0)" class="table-link danger" (click)="onDeleteModal(emp.id)">
                     <span class="fa-stack">
                       <i class="fa fa-square fa-stack-2x"></i>
                       <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
